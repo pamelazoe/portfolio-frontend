@@ -1,0 +1,2 @@
+import{S as s,i as t,s as e,e as a,a as n,d as o,q as i,h as r}from"./main-51cc8f0d.js";function c(s){let t,e,c;return{c(){t=a("p"),t.textContent="This is home",e=n(),c=a("p"),c.textContent="Using routify"},m(s,a){o(s,t,a),o(s,e,a),o(s,c,a)},p:i,i:i,o:i,d(s){s&&r(t),s&&r(e),s&&r(c)}}}export default class extends s{constructor(s){super(),t(this,s,null,c,e,{})}}
+//# sourceMappingURL=index-6af02ed7.js.map

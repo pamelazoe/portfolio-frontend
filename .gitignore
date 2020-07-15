@@ -1,0 +1,9 @@
+/node_modules/
+/public/build/
+
+.DS_Store
+
+.vercel
+/src/spot.js
+.env
+**/.DS_Store

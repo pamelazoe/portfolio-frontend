@@ -8,8 +8,8 @@
   @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Space+Mono&display=swap");
   @media only screen and (max-width: 1023px) {
     .cont {
-      height: 100%;
-      width: 80%;
+      height: 80%;
+      width: 90%;
       display: flex;
       justify-content: center;
       align-items: center;

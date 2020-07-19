@@ -85,6 +85,76 @@
       border-radius: 7px;
     }
   }
+  @media only screen and (max-width: 1023px) {
+    .single-article {
+      display: flex;
+      flex-direction: column;
+      height: 40vw;
+      min-width: 40vw;
+      max-width: 40vw;
+      margin-right: 4vh;
+      margin-bottom: 2vh;
+      overflow: hidden;
+      border-radius: 7px;
+    }
+    .single-article > .refind-icon {
+      height: 100%;
+    }
+    .single-article > .refind-icon > .svg-icon {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .single-article > .refind-icon > .svg-icon > a > img {
+      height: 100%;
+    }
+    .single-article > .refind-url {
+      color: white;
+      position: sticky;
+      bottom: 0;
+      font-size: 0.5em;
+      overflow: hidden;
+      min-height: 100%;
+      z-index: 2;
+      max-height: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: end;
+    }
+    .single-article > .refind-url > .url {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      color: white;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10% 10% 20% 10%;
+      flex-flow: column;
+    }
+    .single-article > .refind-url > .url > a {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
+      outline: none;
+      text-decoration: none;
+    }
+    .single-article > .refind-url > .url > a,
+    a:hover,
+    a:click,
+    a:visited {
+      border: none;
+      outline: none;
+      text-decoration: none;
+      color: inherit;
+      -webkit-tap-highlight-color: white;
+    }
+  }
 </style>
 
 <div class="single-article">

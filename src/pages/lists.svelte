@@ -70,7 +70,7 @@
   .refind-list,
   .spotify-list {
     width: 100%;
-    height: 40%;
+    height: 35%;
     display: flex;
     justify-content: flex-start;
     align-content: center;
@@ -96,8 +96,8 @@
   .list-header > p {
     font-size: 2.5vh;
   }
-  ::-webkit-scrollbar {
-    /* -webkit-appearance: none; */
+
+  /* ::-webkit-scrollbar {
     height: 5px;
     width: 10px;
   }
@@ -118,33 +118,81 @@
   ::-webkit-scrollbar-track:double-button {
     background: rgb(0, 0, 0);
     border: 4px solid transparent;
-    background-clip: content-box; /* THIS IS IMPORTANT */
+    background-clip: content-box; 
   }
-
-  /* ::-webkit-scrollbar-track-piece {
-    background-color: red;
-    background-image: url("icons/dot.png");
-    background-repeat: repeat-y;
-  } */
-  /* ::-webkit-scrollbar-thumb:horizontal {
-    background: rgb(88, 15, 15) url("http://i.minus.com/jbcOb9d7Bb1p6Y.png")
-      no-repeat;
-    background-size: 26px 63px;
-    display: block;
-    width: 30px;
-    height: 100px;
-  } */
   ::-webkit-scrollbar-track-piece {
-    /* border-color: transparent;
-    border-width: 0 2px;
-    background-image: url("../icons/dot.png");
-    background-repeat: repeat-x;
-    background-size: 4px; */
     border-bottom: 4px dotted gray;
     margin: 0 10em;
   }
   ::-webkit-scrollbar-thumb:horizontal {
     background: rgba(23, 23, 23, 0.8);
+  } */
+  @media only screen and (min-width: 1024px) {
+    ::-webkit-scrollbar {
+      height: 5px;
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:double-button {
+      border-radius: 4px;
+      background-color: rgb(55, 55, 55);
+      box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    }
+    ::-webkit-scrollbar-button {
+      color: white;
+      background-color: #bbbbbb;
+      display: block;
+      border-style: solid;
+      height: 13px;
+      width: 16px;
+    }
+    ::-webkit-scrollbar-track:double-button {
+      background: rgb(0, 0, 0);
+      border: 4px solid transparent;
+      background-clip: content-box;
+    }
+    ::-webkit-scrollbar-track-piece {
+      border-bottom: 4px dotted gray;
+      margin: 0 10em;
+    }
+    ::-webkit-scrollbar-thumb:horizontal {
+      background: rgba(23, 23, 23, 0.8);
+    }
+  }
+  @media only screen and (max-width: 1023px) {
+    .list-header > p {
+      font-size: 2.2vh;
+    }
+    .lists {
+      width: 100%;
+    }
+    ::-webkit-scrollbar {
+      height: 5px;
+      width: 10px;
+    }
+
+    /* ::-webkit-scrollbar-thumb:double-button {
+      border-radius: 4px;
+      background-color: rgb(55, 55, 55);
+      box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    } */
+    /* ::-webkit-scrollbar-button {
+      color: white;
+      background-color: #bbbbbb;
+      display: block;
+      border-style: solid;
+      height: 13px;
+      width: 16px;
+    } */
+    ::-webkit-scrollbar-track {
+      background: rgba(23, 23, 23, 0.8);
+      border: 4px solid transparent;
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+      background: rgb(85, 85, 85);
+    }
   }
 </style>
 
@@ -185,6 +233,25 @@
     {/each}
   </div>
 </div>
+<!-- <div class="footer-x">
+  <div class="email">
+    <p>pmlzoe@gmail.com</p>
+  </div>
+  <div class="icons">
+    <a
+      href="https://www.linkedin.com/in/pamelazoe/"
+      target="_blank"
+      rel="noopener noreferrer">
+      <img src="icons/linkedin-white.png" alt="" />
+    </a>
+    <a
+      href="https://github.com/pamelazoe?tab=repositories"
+      target="_blank"
+      rel="noopener noreferrer">
+      <img src="icons/github-white.png" alt="" />
+    </a>
+  </div>
+</div> -->
 
 <!-- authors={h
           .map(y => y.authors)

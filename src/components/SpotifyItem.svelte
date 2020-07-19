@@ -48,13 +48,54 @@
       padding-top: 0.4em;
       /* overflow-y: scroll; */
     }
-    .single-item > .track-data > p {
+    .single-item > .track-data > a > p {
       font-size: 0.8vw;
       line-height: 2.3vh;
       color: rgb(165, 165, 165);
     }
-    .single-item > .track-data > p.artist-name {
+    .single-item > .track-data > a > p.artist-name {
       color: white;
+    }
+  }
+  @media only screen and (max-width: 1023px) {
+    .single-item {
+      display: flex;
+      flex-direction: column;
+      height: 40vw;
+      min-width: 40vw;
+      max-width: 40vw;
+      margin-right: 4vh;
+      overflow: hidden;
+      border-radius: 7px;
+    }
+    .single-item > .artist-image {
+      width: 100%;
+    }
+    .single-item > .artist-image > a > img {
+      width: 100%;
+    }
+    .single-item > .track-data {
+      color: white;
+      position: sticky;
+      bottom: 0;
+      font-size: 0.5em;
+      overflow: hidden;
+      min-height: 100% !important;
+      z-index: 2;
+      max-height: 100% !important;
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      align-content: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 0 10% 0 10%;
+    }
+    .single-item > .track-data > a {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      overflow: hidden;
+      text-decoration: none;
     }
   }
 </style>
@@ -66,8 +107,11 @@
     </a>
   </div>
   <div class="track-data">
-    <p>{nameTrack}</p>
-    <p class="artist-name">{artistName}</p>
-    <p>{albumName}</p>
+    <a href={querySearch} target="_blank">
+      <p>{nameTrack}</p>
+      <p class="artist-name">{artistName}</p>
+      <p>{albumName}</p>
+    </a>
+
   </div>
 </div>

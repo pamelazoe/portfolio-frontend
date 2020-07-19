@@ -18,6 +18,19 @@
 </script>
 
 <style>
+  @media only screen and (max-width: 1023px) {
+    .canvas {
+      height: 100%;
+    }
+    .canvas > .project-wrapper {
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      overflow-x: scroll;
+    }
+  }
   @media only screen and (min-width: 1024px) {
     .canvas {
       height: 100%;

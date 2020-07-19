@@ -55,7 +55,7 @@
   .int-skills > a {
     font-size: 2.5vh;
     text-decoration: none;
-    color: rgb(184, 184, 184);
+    color: rgb(121, 121, 121);
     letter-spacing: 0.4em;
     margin-top: -0.4em;
     z-index: 10;
@@ -66,7 +66,7 @@
   .int-lists > a {
     font-size: 2.2vh;
     text-decoration: none;
-    color: rgb(184, 184, 184);
+    color: rgb(121, 121, 121);
     letter-spacing: 0.4em;
     margin-bottom: -0.4em;
     z-index: 10;
@@ -75,12 +75,12 @@
   .int-projects > a {
     font-size: 2.2vh;
     text-decoration: none;
-    color: rgb(184, 184, 184);
+    color: rgb(121, 121, 121);
     letter-spacing: 0.4em;
     margin-right: -0.4em;
   }
   .c-mobile-header {
-    height: 10vh;
+    height: 6vh;
     display: flex;
     justify-content: flex-end;
     align-items: center;

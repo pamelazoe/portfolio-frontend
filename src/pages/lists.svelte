@@ -198,7 +198,7 @@
 
 <div class="lists">
   <div class="list-header">
-    <p>Things I've been reading/listening...</p>
+    <p>Things I've been reading/watching/listening...</p>
   </div>
   <div class="refind-list">
 

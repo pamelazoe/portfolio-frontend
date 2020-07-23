@@ -20,8 +20,8 @@
       align-content: center;
       align-items: center;
       flex-flow: column;
-      min-width: 27vh;
-      max-width: 27vh;
+      min-width: 28vh;
+      max-width: 28vh;
       margin-right: 3vh;
     }
     .project-header {

@@ -132,7 +132,7 @@
       z-index: 9999;
       color: white;
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       padding: 10% 10% 20% 10%;
       flex-flow: column;
     }

@@ -30,6 +30,13 @@
       align-items: center;
       overflow-x: scroll;
     }
+    .canvas > .project-wrapper > .loader {
+      display: flex;
+      justify-content: center !important;
+      height: 100%;
+      width: 100%;
+      align-items: center;
+    }
   }
   @media only screen and (min-width: 1024px) {
     .canvas {

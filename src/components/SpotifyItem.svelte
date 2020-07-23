@@ -27,8 +27,8 @@
       justify-content: center;
       align-content: center;
       align-self: center;
-      min-height: 60%;
-      max-height: 50%;
+      min-height: 55%;
+      max-height: 55%;
       padding: 0;
       box-sizing: border-box;
       width: 100%;
@@ -55,6 +55,9 @@
     }
     .single-item > .track-data > a > p.artist-name {
       color: white;
+    }
+    .single-item > .track-data > a {
+      text-decoration: none;
     }
   }
   @media only screen and (max-width: 1023px) {

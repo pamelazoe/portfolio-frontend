@@ -11,7 +11,7 @@
 <style>
   @media only screen and (max-width: 1023px) {
     .project-container {
-      height: 60vh;
+      height: 55vh;
       overflow: hidden;
       border-radius: 10px;
       background-color: #333;

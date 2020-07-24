@@ -188,6 +188,7 @@
       background: rgba(23, 23, 23, 0.8);
       border: 4px solid transparent;
       background-clip: content-box;
+      margin: 0 20px;
     }
 
     ::-webkit-scrollbar-thumb:horizontal {

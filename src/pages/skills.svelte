@@ -8,7 +8,7 @@
       align-content: center;
       flex-direction: column;
       font-family: "Inconsolata";
-      line-height: 3.5vh;
+      line-height: 4vh;
       letter-spacing: 0.1em;
     }
   }

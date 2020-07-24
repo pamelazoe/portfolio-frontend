@@ -64,9 +64,9 @@
     .single-item {
       display: flex;
       flex-direction: column;
-      height: 40vw;
-      min-width: 40vw;
-      max-width: 40vw;
+      height: 22vh;
+      min-width: 22vh;
+      max-width: 22vh;
       margin-right: 4vh;
       overflow: hidden;
       border-radius: 7px;

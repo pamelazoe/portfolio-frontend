@@ -15,7 +15,7 @@
       align-items: center;
       text-align: center;
       letter-spacing: 0.2vw;
-      font-size: 6.5vw;
+      font-size: 2em;
     }
     .cont > .int-cont {
       height: 100%;

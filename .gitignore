@@ -4,3 +4,6 @@
 .DS_Store
 
 .vercel
+/src/spot.js
+.env
+**/.DS_Store

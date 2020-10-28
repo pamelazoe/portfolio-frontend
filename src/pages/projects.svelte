@@ -5,15 +5,12 @@
   export let projectList = [];
   $: projectList;
   onMount(async () => {
-    const res = await fetch(
-      proxyUrl + "https://niche-joke.now.sh/github"
-      // , {
-      //   headers: {
-      //     "Content-Type": "application/json; text/html",
-      //     "Access-Control-Allow-Origin": "*"
-      //   }
-      // }
-    )
+    const res = await fetch("https://niche-joke.now.sh/github",  {
+        headers: {
+        'Origin': "https://pamelazoe.now.sh",
+        'Content-Type': 'application/json',
+        }
+      })
       .then(data => data.json())
       .then(x => {
         projectList = x;
@@ -27,15 +24,9 @@
 <style>
   @media only screen and (min-width: 1024px) {
     .canvas {
-      /* display: flex;
-      flex-flow: row;
-      justify-content: space-evenly;
-      align-items: center;
-      align-content: center; */
       height: 100%;
       width: 80vw;
       padding: 6vh 10vh;
-      /* background-color: rgb(23, 23, 23); */
       border-radius: 20px;
     }
     .canvas > .project-wrapper {
@@ -47,10 +38,8 @@
       align-content: center;
       overflow-x: scroll;
       overflow: -moz-scrollbars-horizontal;
+      justify-content: center;
     }
-    /* .canvas > .project-wrapper::-webkit-scrollbar {
-      width: 5px;
-    } */
     ::-webkit-scrollbar {
       -webkit-appearance: none;
       height: 5px;

@@ -3,7 +3,7 @@
   export let title;
   // export let excerpt;
   export let imgSrc;
-  export let authors;
+  // export let authors;
 </script>
 
 <style>
@@ -98,7 +98,7 @@
   <div class="refind-url">
     <div class="url">
       <a {href} target="_blank">{title}</a>
-      <p>{authors}</p>
+      <!-- <p>{authors}</p> -->
     </div>
     <!-- <div class="tags">
       <p>{excerpt}</p>

@@ -1,7 +1,3 @@
-<script>
-
-</script>
-
 <style>
   .footer-x {
     display: flex;

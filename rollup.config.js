@@ -2,10 +2,10 @@ import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
-import {terser} from 'rollup-plugin-terser';
-import {routify} from "@sveltech/routify";
+import { terser } from 'rollup-plugin-terser';
+import { routify } from "@sveltech/routify";
 import pkg from './package.json';
-import {config} from 'dotenv';
+import { config } from 'dotenv';
 import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -18,9 +18,10 @@ export default {
 		name: 'app',
 		file: 'public/build/bundle.js',
 		globals: {
-			"pocket-promise": "Pocket"
+			"pocket-promise": "Pocket",
+			"svelte-loading-spinners": "svelteLoadingSpinners"
 		}
-},
+	},
 
 	// // *** ONLY FOR CODE SPLITTING ***
 	// output: {
@@ -33,12 +34,12 @@ export default {
 		replace({
 			// stringify the object
 			process: JSON.stringify({
-			  env: {
-				isProd: production,
-				...config().parsed // attached the .env config
-			  }
+				env: {
+					isProd: production,
+					...config().parsed // attached the .env config
+				}
 			}),
-		  }),
+		}),
 		routify({
 			singleBuild: production
 		}),
@@ -76,9 +77,9 @@ export default {
 		production && terser()
 	],
 	external: Object.keys(pkg.dependencies).concat(['pocket-promise']),
-		watch: {
-	clearScreen: false
-}
+	watch: {
+		clearScreen: false
+	}
 };
 
 function serve() {
@@ -86,11 +87,11 @@ function serve() {
 
 	return {
 		writeBundle() {
-			if(!started) {
+			if (!started) {
 				started = true;
 
-				require('child_process').spawn('npm',['run','start','--','--dev'],{
-					stdio: ['ignore','inherit','inherit'],
+				require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
+					stdio: ['ignore', 'inherit', 'inherit'],
 					shell: true
 				});
 			}

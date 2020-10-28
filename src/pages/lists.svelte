@@ -2,42 +2,21 @@
   import { onMount } from "svelte";
   import RefindLink from "../components/RefindLink.svelte";
   import SpotifyItem from "../components/SpotifyItem.svelte";
-  import { SyncLoader } from "svelte-loading-spinners";
+  import Spinner from "../components/Spinner.svelte";
 
-  // const config = {
-  //   consumer_key: process.env.POCKET_CONSUMER_KEY,
-  //   access_token: process.env.POCKET_ACCESS_TOKEN,
-  //   detailType: "complete"
-  // };
-  // const postData = async (url = "", data = {}) => {
-  //   // Default options are marked with *
-  //   const response = await fetch(url, {
-  //     method: "GET", // *GET, POST, PUT, DELETE, etc.
-  //     mode: "cors", // no-cors, *cors, same-origin
-  //     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-  //     credentials: "same-origin", // include, *same-origin, omit
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //       // 'Content-Type': 'application/x-www-form-urlencoded',
-  //     },
-  //     redirect: "follow", // manual, *follow, error
-  //     referrerPolicy: "no-referrer" // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-  //     // body: JSON.stringify(data) // body data type must match "Content-Type" header
-  //   });
-  //   return response.json(); // parses JSON response into native JavaScript objects
-  // };
-  const proxyUrl = process.env.FING_CORS,
-    targetUrl = "https://niche-joke.now.sh/pocket";
-  // postData(proxyUrl + targetUrl, config)
-  //   .then(data => data)
-  //   .catch(err => console.log(err));
+  const proxyUrl = process.env.FING_CORS
 
   // *********************************
   const spotifyHandler = process.env.SPOTIFY_BACKEND;
   export let spotifyList = [];
   $: spotifyList;
   onMount(async () => {
-    const res = await fetch(proxyUrl + spotifyHandler)
+    const res = await fetch("https://niche-joke.now.sh/spotify",  {
+        headers: {
+        'Origin': "https://pamelazoe.now.sh",
+        'Content-Type': 'application/json',
+        }
+      })
       .then(data => data.json())
       .then(x => (spotifyList = x));
     console.log(spotifyList);
@@ -47,7 +26,7 @@
   export let pocketList = [];
   $: pocketList;
   onMount(async () => {
-    const res = await fetch(proxyUrl + targetUrl)
+    const res = await fetch("https://niche-joke.now.sh/pocket")
       .then(data => data.json())
       .then(x => (pocketList = x))
       .catch(err => console.log(err));
@@ -118,26 +97,7 @@
     border: 4px solid transparent;
     background-clip: content-box; /* THIS IS IMPORTANT */
   }
-
-  /* ::-webkit-scrollbar-track-piece {
-    background-color: red;
-    background-image: url("icons/dot.png");
-    background-repeat: repeat-y;
-  } */
-  /* ::-webkit-scrollbar-thumb:horizontal {
-    background: rgb(88, 15, 15) url("http://i.minus.com/jbcOb9d7Bb1p6Y.png")
-      no-repeat;
-    background-size: 26px 63px;
-    display: block;
-    width: 30px;
-    height: 100px;
-  } */
   ::-webkit-scrollbar-track-piece {
-    /* border-color: transparent;
-    border-width: 0 2px;
-    background-image: url("../icons/dot.png");
-    background-repeat: repeat-x;
-    background-size: 4px; */
     border-bottom: 4px dotted gray;
     margin: 0 10em;
   }
@@ -153,17 +113,14 @@
   <div class="refind-list">
 
     {#each pocketList as h}
-      {#each h.itemAuthors as b}
-        <RefindLink
-          imgSrc={!h.image && !h.top_image_url ? 'icons/icons8-pocket.svg' : h.image ? h.image['src'] : h.top_image_url}
-          href={h.given_url}
-          title={(!h.given_title && !h.resolved_title) || (h.given_title && h.resolved_title === '') ? h.given_url : h.resolved_title}
-          authors={b.name} />
-      {:else}
-        <div class="loader">
-          <SyncLoader size="2" color="gray" unit="em" />
-        </div>
-      {/each}
+      <RefindLink
+        imgSrc={!h.image && !h.top_image_url ? 'icons/icons8-pocket.svg' : h.image ? h.image['src'] : h.top_image_url}
+        href={h.given_url}
+        title={(!h.given_title && !h.resolved_title) || (h.given_title && h.resolved_title === '') ? h.given_url : h.resolved_title} />
+    {:else}
+      <div class="loader">
+        <Spinner loading={1} />
+      </div>
     {/each}
 
   </div>
@@ -179,14 +136,8 @@
         albumName={h.album} />
     {:else}
       <div class="loader">
-        <SyncLoader size="2" color="gray" unit="em" />
+        <Spinner loading={1} />
       </div>
     {/each}
   </div>
 </div>
-
-<!-- authors={h
-          .map(y => y.authors)
-          .map(u => (u === undefined ? [[]] : Object.entries(u)))
-          .reduce((a, b) => a.concat(b), [])
-          .map(t => (t[1] ? t[1].name : ''))} -->

@@ -1,14 +1,13 @@
 <script>
-  import { isActive, url } from "@sveltech/routify";
   import Header from "../components/Header.svelte";
   import Footer from "../components/Footer.svelte";
 </script>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Space+Mono&display=swap");
   @media only screen and (max-width: 1023px) {
     .cont {
-      height: 100%;
+      min-height: 80%;
+      max-height: 80%;
       width: 80%;
       display: flex;
       justify-content: center;

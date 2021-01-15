@@ -1,4 +1,4 @@
-<script type="module">
+<script>
   import { onMount } from "svelte";
   import RefindLink from "../components/RefindLink.svelte";
   import SpotifyItem from "../components/SpotifyItem.svelte";
@@ -38,8 +38,75 @@
 </script>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Space+Mono&display=swap");
-  .lists {
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    .lists {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .refind-list,
+  .spotify-list {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .spotify-list > .loader,
+  .refind-list > .loader {
+    min-width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .list-header > p {
+    font-size: 2.5vh;
+  }
+  ::-webkit-scrollbar {
+    /* -webkit-appearance: none; */
+    height: 5px;
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:double-button {
+    border-radius: 4px;
+    background-color: rgb(55, 55, 55);
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+  ::-webkit-scrollbar-button {
+    color: white;
+    background-color: #bbbbbb;
+    display: block;
+    border-style: solid;
+    height: 13px;
+    width: 16px;
+  }
+  ::-webkit-scrollbar-track:double-button {
+    background: rgb(0, 0, 0);
+    border: 4px solid transparent;
+    background-clip: content-box; /* THIS IS IMPORTANT */
+  }
+  ::-webkit-scrollbar-track-piece {
+    border-bottom: 4px dotted gray;
+    margin: 0 10em;
+  }
+  ::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(23, 23, 23, 0.8);
+  }
+  }
+  @media only screen and (min-width: 1024px) {
+    .lists {
     width: 80%;
     height: 100%;
     display: flex;
@@ -103,6 +170,7 @@
   }
   ::-webkit-scrollbar-thumb:horizontal {
     background: rgba(23, 23, 23, 0.8);
+  }
   }
 </style>
 

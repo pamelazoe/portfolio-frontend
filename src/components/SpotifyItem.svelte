@@ -6,8 +6,65 @@
   export let querySearch;
 </script>
 
+<div class="single-item">
+  <div class="artist-image">
+    <a href="{querySearch}" target="_blank">
+      <img src="{artistImg}" alt="" />
+    </a>
+  </div>
+  <div class="track-data">
+    <p>{nameTrack}</p>
+    <p class="artist-name">{artistName}</p>
+    <p class="album-name">{albumName}</p>
+  </div>
+</div>
+
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Space+Mono&display=swap");
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    .single-item {
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      min-width: 80%;
+      padding-right: 10%;
+    }
+    .artist-image {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-self: center;
+      min-height: 70%;
+      max-height: 70%;
+      padding: 0;
+      box-sizing: border-box;
+      width: 70%;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .artist-image > a {
+      width: 100%;
+    }
+    .single-item > .artist-image > a > img {
+      box-sizing: border-box;
+      height: 100%;
+      width: auto;
+      border-radius: 7px;
+    }
+    .single-item > .track-data {
+      overflow-y: scroll;
+    }
+    .single-item > .track-data > p.album-name {
+      display: none;
+    }
+    .single-item > .track-data > p {
+      font-size: 2.3vw;
+      line-height: 2.3vh;
+      color: rgb(165, 165, 165);
+    }
+    .single-item > .track-data > p.artist-name {
+      color: white;
+    }
+  }
   @media only screen and (min-width: 1024px) {
     .single-item {
       display: flex;
@@ -37,8 +94,6 @@
       width: 100%;
     }
     .single-item > .artist-image > a > img {
-      /* object-fit: cover; */
-      /* height: 100%; */
       box-sizing: border-box;
       height: 100%;
       width: auto;
@@ -58,16 +113,3 @@
     }
   }
 </style>
-
-<div class="single-item">
-  <div class="artist-image">
-    <a href={querySearch} target="_blank">
-      <img src={artistImg} alt="" />
-    </a>
-  </div>
-  <div class="track-data">
-    <p>{nameTrack}</p>
-    <p class="artist-name">{artistName}</p>
-    <p>{albumName}</p>
-  </div>
-</div>

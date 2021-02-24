@@ -167,7 +167,7 @@ table {
   align-items: center;
   flex-direction: column;
   align-self: center;
-  font-size: 3.5vh;
+  font-size: 4vh;
   letter-spacing: 5px;
 }
 .c-nav a {
@@ -175,20 +175,23 @@ table {
   font-size: 1.5rem;
   display: inline-block;
   padding: 1.6rem;
+  text-decoration: none;
 }
 .nav-mobile a {
-  padding: 6vh 0;
+  padding: 4.5vh 0;
+  text-decoration: none;
 }
 
 .c-nav a.active {
   background: rgba(#000, 0.1);
   color: #000;
+  text-decoration: none;
 }
 .c-nav-toggle > button {
   font-size: 5vh;
 }
 
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
   body {
     padding: 2.5rem 2.5rem;
   }
@@ -213,5 +216,66 @@ table {
 @media only screen and (min-width: 1024px) {
   body {
     padding: 2vh 2vh;
+  }
+} */
+
+/* 320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV */
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  body {
+    padding: 2.5rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: landscape) {
+  body {
+    padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait) {
+  body {
+    padding: 3rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding: 5rem 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+  }
+  .c-nav-toggle > button {
+    font-size: 7vh;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  body {
+    padding: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+  }
+  .c-nav-toggle > button {
+    font-size: 7vh;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  body {
+    padding: 3vh;
+    display: flex;
+    flex-flow: wrap;
+  }
+}
+@media screen and (min-width: 1201px) {
+  body {
+    padding: 3vh;
   }
 }

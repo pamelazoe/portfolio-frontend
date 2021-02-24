@@ -3,6 +3,13 @@
 </script>
 
 <style>
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  
+  /* display: flex;
+align-items: center;
+justify-content: center; */
+}
   .spinner {
     display: inline-block;
     border: 0.3em solid var(--color-spinner-border, rgb(72, 72, 72));

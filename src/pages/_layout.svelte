@@ -4,11 +4,55 @@
 </script>
 
 <style>
-  @media only screen and (max-width: 1023px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
     .cont {
       min-height: 80%;
       max-height: 80%;
-      width: 80%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.2vw;
+      font-size: 6.5vw;
+    }
+    .cont > .int-cont {
+      /* height: 100%; */
+      height: 69vh; /* For Safari :( */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+    }
+  }
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .cont {
+      min-height: 80%;
+      max-height: 80%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.2vw;
+      font-size: 6.5vw;
+    }
+    .cont > .int-cont {
+      /* height: 100%; */
+      height: 69vh; /* For Safari :( */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+    .cont {
+      height: 65vh;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,10 +67,33 @@
       justify-content: center;
       align-content: center;
       flex-direction: column;
+      align-items: center;
+    }
+  }
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    .cont {
+      min-height: 80%;
+      max-height: 80%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.2vw;
+      font-size: 6.5vw;
+    }
+    .cont > .int-cont {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
-  @media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
     .cont {
       position: absolute;
       left: 0;

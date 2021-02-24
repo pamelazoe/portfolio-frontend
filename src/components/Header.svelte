@@ -7,7 +7,7 @@
   handleResize();
   function handleResize() {
     windowWidth = window.innerWidth;
-    if (windowWidth < 1024) {
+    if (windowWidth <= 1024) {
       narrow = true;
     } else {
       narrow = false;
@@ -86,6 +86,7 @@
     align-items: center;
     z-index: 1000;
     width: 100%;
+    align-self: flex-start;
   }
 
   .o-container button {
@@ -100,13 +101,127 @@
     background-color: black;
     border: none;
   }
+@media screen and (min-width: 320px) and (max-width: 480px) {
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+}
+@media screen and (min-width: 1201px) {
+}
 
-  @media only screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: landscape) {
+  .c-nav-toggle > button {
+      font-size: 7vh;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
     .c-nav-toggle > button {
       font-size: 7vh;
     }
+    
   }
-  @media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) and (max-width: 1200px) and (orientation: landscape) {
+  .c-mobile-header {
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1000;
+    width: 100%;
+    align-self: flex-start;
+  }
+    .web-nav {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+    .about {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4vh;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    .projects {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 4vh;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    .skills {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 4vh;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+    .lists {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4vh;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+    .int-skills {
+      height: fit-content;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.9em 0;
+    }
+    .int-lists {
+      height: fit-content;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.9em 0;
+    }
+    .int-about,
+    .int-projects {
+      height: 100%;
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 0.7em;
+    }
+    .skills > .int-skills > a {
+      transform: rotate(270deg);
+    }
+    .lists > .int-lists > a {
+      transform: rotate(90deg);
+    }
+  }
+  @media screen and (min-width: 1201px) {
+  .c-mobile-header {
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1000;
+    width: 100%;
+    align-self: flex-start;
+  }
     .web-nav {
       height: 100%;
       width: 100%;
